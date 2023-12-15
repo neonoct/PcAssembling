@@ -33,9 +33,7 @@ void MB::setSize(const std::string& newSize) {
 }
 
 // Destructor implementation
-MB::~MB() {
-	std::cout << "MB destructor called" << std::endl;
-}
+MB::~MB() {}
 
 // string implementation
 std::string MB::getDetails() const {
