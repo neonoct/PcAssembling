@@ -1,6 +1,5 @@
 #ifndef COMPUTER_SHOP_H
 #define COMPUTER_SHOP_H
-#include <string>
 #include <vector>
 #include "Component.h" // Assuming you have a Component class defined
 #include "Customer.h" // Assuming you have a Customer class defined

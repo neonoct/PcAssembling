@@ -7,8 +7,6 @@
 #include <fstream>
 
 
-
-
 void addComponent(std::vector<Component*>& components) {
     //type 0 = case, type 1 = cpu, type 2 = gpu, type 3 = hd, type 4 = mb, type 5 = memory, type 6 = ps
     int choice;

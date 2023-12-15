@@ -2,7 +2,6 @@
 #define INVOICE_H
 #include "Customer.h"
 #include "Component.h"
-#include <string>
 #include <vector>
 
 class Invoice

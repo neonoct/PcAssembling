@@ -1,7 +1,6 @@
 #ifndef PS_H
 #define PS_H
 #include "Component.h"
-#include <string>
 
 //type 6 = ps
 class PS :

@@ -1,7 +1,6 @@
 #ifndef MB_H
 #define MB_H
 #include "Component.h"
-#include <string>
 
 //type 4 = mb
 class MB :

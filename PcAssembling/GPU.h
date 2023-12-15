@@ -1,7 +1,7 @@
 #ifndef GPU_H
 #define	GPU_H
 #include "Component.h"
-#include <string>
+
 
 //type 2 = gpu
 class GPU : 

@@ -1,7 +1,7 @@
 #ifndef HD_H
 #define HD_H
 #include "Component.h"
-#include <string>
+
 
 //type 3 = hd
 class HD :

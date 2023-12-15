@@ -1,7 +1,7 @@
 #ifndef CASE_H
 #define CASE_H
 #include "Component.h"
-#include <string>
+
 
 //type 0 = case
 class Case :
