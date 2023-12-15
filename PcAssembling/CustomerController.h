@@ -5,7 +5,6 @@
 #include <vector>
 #include <memory>
 constexpr auto CUSTOMERS_FILE = "files/customers.txt";
-constexpr auto CUSTOMERS_W_FILE = "files/customerswrite.txt";
 
 void addCustomer(std::vector<Customer*>& customers);
 void deleteCustomer(std::vector<Customer*>& customers);

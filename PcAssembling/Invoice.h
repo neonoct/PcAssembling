@@ -12,7 +12,7 @@ private:
 	std::vector<Component*> components;
 	float totalPrice;
 	//calc
-	float calcTotalPrice(std::vector<Component*>& components,Customer* customer);
+	float calcTotalPrice(std::vector<Component*>& components,Customer* customer); // private function to calculate the total price of the invoice
 public:
 	Invoice
 	(

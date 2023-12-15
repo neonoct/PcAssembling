@@ -9,9 +9,7 @@ class Case :
 {
 private:
 	std::string color;
-
 	std::string MBsize;
-
 	std::string Material;
 public:
 	Case

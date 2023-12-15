@@ -124,6 +124,7 @@ void readCustomers(vector<Customer*>& customers, const std::string& filename) {
 		std::string _type;
 		//std::getline(linestream, _type, ',');
 		bool _type_ = findCustomerType(line);
+		
 		if (!_type_) {
 			std::string _name, _address,_companyString;
 			bool _company;
@@ -132,8 +133,6 @@ void readCustomers(vector<Customer*>& customers, const std::string& filename) {
 			linestream >> _name >> std::ws >> _address >> std::ws >> _companyString;
 			_company = _companyString == "true" ? true : false;
 			customers.push_back(new Customer(_name, _address, _company));
-
-
 			
 		}
 		else{
@@ -145,7 +144,7 @@ void readCustomers(vector<Customer*>& customers, const std::string& filename) {
 			linestream >> _name >> std::ws >> _address >> std::ws >> _companyString >> std::ws >> _vat >> std::ws >> _yearlyBuy;
 			_company = _companyString == "true" ? true : false;
 			customers.push_back(new Company(_name, _address, _company, _vat, _yearlyBuy));
-
+			
 		}
 		
 	}
@@ -154,18 +153,19 @@ void readCustomers(vector<Customer*>& customers, const std::string& filename) {
 }
 
 bool findCustomerType(const std::string& line) {
+	
 	std::istringstream iss(line);
+	
 	std::vector<std::string> tokens{ std::istream_iterator<std::string>{iss},
 									std::istream_iterator<std::string>{} };
+	
 	if (tokens.size() < 3) {
 		throw std::out_of_range("Less than three words in string.");
 	}
 	//return tokens[4]; // Indexing starts from 0, so the fifth word is at index 4.
-	std::cout << tokens[1] << std::endl;
 	if (tokens[2] == "true") {
 		return true;
 	}
-	
 	return false;
 }
 

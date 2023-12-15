@@ -227,12 +227,12 @@ void ownerActions(ComputerShop* computerShop) {
         case 13:
 			cout << "Write customers selected.\n----------------------------\n";
 			// Placeholder for future function
-			writeCustomers(computerShop->getCustomers(), CUSTOMERS_W_FILE);
+			writeCustomers(computerShop->getCustomers(), CUSTOMERS_FILE);
 			break;
         case 14:
             cout << "Write components selected.\n----------------------------\n";
 			// Placeholder for future function
-			writeComponents(computerShop->getComponents(), COMPONENTS_W_FILE);
+			writeComponents(computerShop->getComponents(), COMPONENTS_FILE);
 			break;
         case 0:
             break;

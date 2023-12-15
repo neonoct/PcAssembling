@@ -1,5 +1,8 @@
 #include "MainController.h"
 #include "ComputerShop.h"
+#include "ComponentController.h"
+#include "CustomerController.h"
+#include "InvoiceController.h"
 #include <iostream>
 #include <string>
 using namespace std;
@@ -11,7 +14,12 @@ int main() {
     vector<Invoice*> invoices;
     vector<Component*> components;
     vector<Customer*> customers;
-    ComputerShop* computerShop =new ComputerShop ("ComputerShop", "Address", components, customers);
+    ComputerShop* computerShop = new ComputerShop ("ComputerShop", "Address", components, customers);
+
+    //load components and customers from file
+    readCustomers(computerShop->getCustomers(), CUSTOMERS_FILE);
+    readComponents(computerShop->getComponents(), COMPONENTS_FILE);
+
 
 
     do {
@@ -36,6 +44,10 @@ int main() {
             cout << "Invalid selection. Please try again.\n";
         }
     } while (userType != 0);
+
+    //save components and customers to file
+    writeCustomers(computerShop->getCustomers(), CUSTOMERS_FILE);
+    writeComponents(computerShop->getComponents(), COMPONENTS_FILE);
 
     // Delete the computerShop when done to invoke its destructor and clean up
     delete computerShop;

@@ -7,7 +7,6 @@ private:
     std::string name;
     std::string address;
     bool company;
-
 public:
     Customer
     (
