@@ -1,0 +1,8 @@
+Intel i7-9700K 300 10 1 true 3600 8 LGA1151
+Nvidia RTX-2080 700 5 2 true 250 14000
+Seagate Barracuda 50 20 3 true 7200 1000 3.5"
+Asus ROG-Strix-Z390-E 250 10 4 true 1151 4 ATX
+Corsair Vengeance-LPX 100 15 5 true 16 3200
+Corsair RMx-Series-RM750x 120 10 6 true 750 80
+Corsair Crystal-570X-RGB 180 5 0 true Black ATX Tempered-Glass
+Corsair Crystal-570X-RGB 180 5 0 false Black ATX Tempered-Glass
