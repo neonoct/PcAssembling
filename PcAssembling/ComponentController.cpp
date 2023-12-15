@@ -14,8 +14,6 @@ void addComponent(std::vector<Component*>& components) {
     // Display a menu to choose the component type
     std::cout << "Select the component type:" << std::endl;
     //test
-    std::cout << "-1. test(add some components with function)" << std::endl;
-    std::cout << "0. test(add some components from file)" << std::endl;
     std::cout << "1. CPU" << std::endl;
     std::cout << "2. GPU" << std::endl;
     std::cout << "3. HD (Hard Drive)" << std::endl;
@@ -29,13 +27,7 @@ void addComponent(std::vector<Component*>& components) {
 
     // Create a new component based on the user's choice
     switch (choice) {
-    //test
-    case -1:
-		testComponentController(components);
-		break;
-    case 0:
-	    readComponents(components, COMPONENTS_FILE);
-	    break;
+  
     case 1:
         addCPU(components);
         break;
@@ -67,27 +59,6 @@ void addComponent(std::vector<Component*>& components) {
     showComponents(components);
 }
 
-//test
-void testComponentController(std::vector<Component*>& components) {
-    // Add a few components to the list
-    components.push_back(new CPU("Intel", "i7-9700K", 300, 10, 1, true, 3600, 8, "LGA1151"));
-    components.push_back(new GPU("Nvidia", "RTX-2080", 700, 5, 2, true, 250, 14000));
-    components.push_back(new HD("Seagate", "Barracuda", 50, 20, 3, true, 7200, 1000, "3.5\""));
-    components.push_back(new MB("Asus", "ROG-Strix-Z390-E", 250, 10, 4, true, 1151, 4, "ATX"));
-    components.push_back(new Memory("Corsair", "Vengeance-LPX", 100, 15, 5, true, 16, 3200));
-    components.push_back(new PS("Corsair", "RMx-Series RM750x", 120, 10, 6, true, 750, 80));
-    components.push_back(new Case("Corsair", "Crystal-570X-RGB", 180, 5, 0, true, "Black", "ATX", "Tempered-Glass"));
-    //also add some components for pc but different characteristics
-    components.push_back(new CPU("Intel", "i7-9700K", 300, 10, 1, false, 3600, 8, "LGA1151"));
-    components.push_back(new GPU("Nvidia", "RTX-2080", 700, 5, 2, false, 250, 14000));
-    components.push_back(new HD("Seagate", "Barracuda", 50, 20, 3, false, 7200, 1000, "3.5\""));
-    components.push_back(new MB("Asus", "ROG-Strix-Z390-E", 250, 10, 4, false, 1151, 4, "ATX"));
-    components.push_back(new Memory("Corsair", "Vengeance-LPX", 100, 15, 5, false, 16, 3200));
-    components.push_back(new PS("Corsair", "RMx-Series-RM750x", 120, 10, 6, false, 750, 80));
-    components.push_back(new Case("Corsair", "Crystal-570X RGB", 180, 5, 0, false, "Black", "ATX", "Tempered-Glass"));
-    
-
-}
 void readComponents(std::vector<Component*>& components, const std::string& filename) {
     std::ifstream file(filename);
     if (!file.is_open()) {

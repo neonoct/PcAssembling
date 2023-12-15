@@ -30,7 +30,6 @@ void deleteComponent(std::vector<Component*>& components, int index);
 
 void showComponents(const std::vector<Component*>& components);
 
-void testComponentController(std::vector<Component*>& components);//for testing delete later
 void readComponents(std::vector<Component*>& components, const std::string& filename);
 
 //a function to show specific component according to the pc or laptop

@@ -22,10 +22,6 @@ void ownerActions(ComputerShop* computerShop) {
         cout << "8. Add component\n";
         cout << "9. Update component\n";
         cout << "10. Update stock\n";
-        cout << "11. Show components--test\n";
-        cout << "12. Add customers--test\n";
-        cout << "13. Write customers--test\n";
-        cout << "14. Write components--test\n";
         cout << "0. Return to main menu\n";
         cout << "Enter action:\n ";
         cin >> action;
@@ -129,111 +125,6 @@ void ownerActions(ComputerShop* computerShop) {
                 }
             }
             break;
-        case 11://test too
-            cout << "Show components selected.\n----------------------------\n";
-			// Placeholder for future function
-			//make a menu
-            cout << "1. Show all components\n";
-            cout << "2. Show laptop components\n";
-            cout << "3. Show pc components\n";
-            cout << "4. Show laptop CPU components\n";
-            cout << "5. Show laptop GPU components\n";
-            cout << "6. Show laptop HD components\n";
-            cout << "7. Show laptop MB components\n";
-            cout << "8. Show laptop Memory components\n";
-            cout << "9. Show laptop PS components\n";
-            cout << "10. Show laptop Case components\n";
-            cout << "11. Show pc CPU components\n";
-            cout << "12. Show pc GPU components\n";
-            cout << "13. Show pc HD components\n";
-            cout << "14. Show pc MB components\n";
-            cout << "15. Show pc Memory components\n";
-            cout << "16. Show pc PS components\n";
-            cout << "17. Show pc Case components\n";
-            cout << "18. Show all Cpu components\n";
-            cout << "19. Exit\n";
-            cout << "Enter action: ";
-            int showAction;
-            cin >> showAction;
-            switch (showAction) {
-                case 1:
-				    showComponents(computerShop->getComponents());
-				    break;
-                case 2:
-                    showIsLaptopComponents(computerShop->getComponents(), true);
-                    break;
-                case 3:
-					showIsLaptopComponents(computerShop->getComponents(), false);
-					break;
-				case 4:
-                    showSpecificComponents(computerShop->getComponents(), ComponentType::CPU, true);
-                    break;
-                case 5:
-                    showSpecificComponents(computerShop->getComponents(), ComponentType::GPU, true);
-                    break;
-                case 6:
-					showSpecificComponents(computerShop->getComponents(), ComponentType::HD, true);
-					break;
-				case 7:
-                    showSpecificComponents(computerShop->getComponents(), ComponentType::MB, true);
-                    break;
-                case 8:
-                    showSpecificComponents(computerShop->getComponents(), ComponentType::Memory, true);
-					break;
-                case 9:
-					showSpecificComponents(computerShop->getComponents(), ComponentType::PS, true);
-					break;
-				case 10:
-					showSpecificComponents(computerShop->getComponents(), ComponentType::Case, true);
-                    break;
-                case 11:
-                    showSpecificComponents(computerShop->getComponents(), ComponentType::CPU, false);
-					break;
-                case 12:
-					showSpecificComponents(computerShop->getComponents(), ComponentType::GPU, false);
-                    break;
-                case 13:
-                    showSpecificComponents(computerShop->getComponents(), ComponentType::HD, false);
-                    break;
-				case 14:
-                    showSpecificComponents(computerShop->getComponents(), ComponentType::MB, false);
-                    break;
-                case 15:
-                    showSpecificComponents(computerShop->getComponents(), ComponentType::Memory, false);
-					break;
-                case 16:
-					showSpecificComponents(computerShop->getComponents(), ComponentType::PS, false); 
-                    break;
-                case 17:
-                    showSpecificComponents(computerShop->getComponents(), ComponentType::Case, false);
-                    break;
-                case 18:
-                    showSpecificComponents(computerShop->getComponents(), ComponentType::CPU);
-                    break;
-                case 19:
-                    cout << "Returning to main menu.\n----------------------------\n";
-                    break;
-                default:
-                    cout << "Invalid action. Please try again.\n----------------------------\n";
-            }
-
-			break;
-		case 12:
-			cout << "Add customers selected.\n----------------------------\n";
-			// Placeholder for future function
-			readCustomers(computerShop->getCustomers(), CUSTOMERS_FILE);
-            showCustomers(computerShop->getCustomers());
-			break;
-        case 13:
-			cout << "Write customers selected.\n----------------------------\n";
-			// Placeholder for future function
-			writeCustomers(computerShop->getCustomers(), CUSTOMERS_FILE);
-			break;
-        case 14:
-            cout << "Write components selected.\n----------------------------\n";
-			// Placeholder for future function
-			writeComponents(computerShop->getComponents(), COMPONENTS_FILE);
-			break;
         case 0:
             break;
         default:
@@ -253,7 +144,6 @@ void employeeActions(ComputerShop* computerShop, std::vector<Invoice*>& invoices
         cout << "1. Add client\n"; //needs Search Client use-case
         cout << "2. Update client\n"; //needs Search Client use-case
         cout << "3. Build system\n";//needs Search Client use-case and Create Invovice use case
-        cout << "4. test requirements\n";
         cout << "0. Return to main menu\n";
         cout << "Enter action: ";
         cin >> action;
