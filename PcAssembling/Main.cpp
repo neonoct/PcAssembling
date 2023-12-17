@@ -26,6 +26,8 @@ int main() {
     cout << "Please do not enter any spaces in your input.If you need to enter multiple words, use a dash(-) instead.\n";
     // for input types class diagram should be followed as i didnt have time to implement the input validation
     cout << "Please follow the class diagram for input types.\n";
+    // please try to give correct input types as much as possible
+    cout << "Please try to give correct input types as much as possible as the catch block is not implemented.\n";
     
 
 
