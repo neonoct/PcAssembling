@@ -2,7 +2,7 @@
 #define COMPANY_H
 #include "Customer.h"
 
-//calcReduction() should be fixed
+
 class Company :
     public Customer
 {

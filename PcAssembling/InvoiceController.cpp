@@ -92,7 +92,7 @@ bool checkComponents(std::vector<Component*>& components,bool isLaptop) {
 bool selectComponents(std::vector<Component*>& selectedComponents, std::vector<Component*>& components, bool isLaptop) { 
 	//prompt the user to select components from every category
 	
-	std::cout << "select components from every category" << std::endl;//can be done in a better way with a loop
+	std::cout << "select components from every category" << std::endl;//can be done in a better way with a loop, but i don't have time to do it
 	std::cout << "1. CPU:" << std::endl;
 	selectedComponents.push_back(chooseSpecificComponents(components, ComponentType::CPU, isLaptop));
 	if (selectedComponents[0] == nullptr) {return false;}

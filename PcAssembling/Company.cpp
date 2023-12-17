@@ -9,7 +9,7 @@ Company::Company
 	//int reduction,
 	int yearlyBuy
 )
-	: Customer(name, address, company), vat(vat), yearlyBuy(yearlyBuy)//, reduction(reduction) -- this is excluded because it is calculated
+	: Customer(name, address, company), vat(vat), yearlyBuy(yearlyBuy)//, reduction(reduction) -- this is excluded because it is calculated,also can be calculated in the constructor
 {
 	reduction = calcReduction(); // Calculate the reduction based on yearlyBuy
 }
@@ -44,6 +44,7 @@ std::string Company::getDetails() const {
 
 //private function calc
 int Company::calcReduction() const {
+	// is assumed that the reduction is calculated based on the yearlyBuy 
 	int reduction = 0;
 	if (yearlyBuy < 1000) {
 		reduction = 0;

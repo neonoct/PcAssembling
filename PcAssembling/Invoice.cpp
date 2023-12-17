@@ -11,7 +11,7 @@ Invoice::Invoice
 	Customer* customer,
 	std::vector<Component*> components
 )
-	: invoiceId(invoiceId), customer(customer), components(components), totalPrice(calcTotalPrice(components, customer)) {}
+	: invoiceId(invoiceId), customer(customer), components(components), totalPrice(calcTotalPrice(components, customer)) {}// total price is calculated in constructor
 
 // Getters implementation
 int Invoice::getInvoiceId() const { return invoiceId; }
