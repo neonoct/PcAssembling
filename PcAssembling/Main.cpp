@@ -24,6 +24,9 @@ int main() {
     cout << "Welcome to the Computer Shop!\n";
     //display how user should use the program
     cout << "Please do not enter any spaces in your input.If you need to enter multiple words, use a dash(-) instead.\n";
+    // for input types class diagram should be followed as i didnt have time to implement the input validation
+    cout << "Please follow the class diagram for input types.\n";
+    
 
 
 
