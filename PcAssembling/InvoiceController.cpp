@@ -50,7 +50,7 @@ Invoice* buildSystem(std::vector<Customer*>& customers, std::vector<Component*>&
 	std::vector<Component*> selectedComponents;
 	//selectComponents(selectedComponents,components, isLaptop);
 	if (selectComponents(selectedComponents, components, isLaptop) == false) {
-		std::cout << "not enough stock to build the system" << std::endl;
+		std::cout << "not enough stock or selected component is not available" << std::endl;
 		return nullptr;
 	}
 
@@ -147,16 +147,20 @@ Component* chooseSpecificComponents(const std::vector<Component*>& components, C
 
 	std::cout << "Choose component: ";
 	std::cin >> selectedIndex;
+	//check if the selected index is valid
+	if (selectedIndex < 0 || selectedIndex >= index) {
+		std::cout << "Invalid index." << std::endl;
+		return nullptr;
+	}
 
 	for (const auto& component : components) {
 		if (component != nullptr && component->getType() == typeInt && component->isLaptopComponent() == isLaptop) {
 			if (selectedIndex == count) {
 				std::cout << "Selected component: ";
 				std::cout << component->getDetails() << std::endl;
-				std::cout << "returned: " << std::endl;
 				//if stock of the component is 0 return nullptr
 				if (component->getStock() == 0) {
-					std::cout << "stock is 0 returning nullptr" << std::endl;
+					std::cout << "stock is 0 on this component, unable to select it" << std::endl;
 					return nullptr;
 				}
 				return component;

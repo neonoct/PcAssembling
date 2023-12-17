@@ -19,6 +19,7 @@ int main() {
     //load components and customers from file
     readCustomers(computerShop->getCustomers(), CUSTOMERS_FILE);
     readComponents(computerShop->getComponents(), COMPONENTS_FILE);
+    //didnt load and write invoices as i was not sure if that was needed
 
     // display welcome message
     cout << "Welcome to the Computer Shop!\n";
@@ -58,6 +59,7 @@ int main() {
     //save components and customers to file
     writeCustomers(computerShop->getCustomers(), CUSTOMERS_FILE);
     writeComponents(computerShop->getComponents(), COMPONENTS_FILE);
+    //didnt load and write invoices as i was not sure if that was needed
 
     // Delete the computerShop when done to invoke its destructor and clean up
     delete computerShop;
