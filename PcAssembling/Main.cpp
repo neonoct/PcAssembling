@@ -20,6 +20,11 @@ int main() {
     readCustomers(computerShop->getCustomers(), CUSTOMERS_FILE);
     readComponents(computerShop->getComponents(), COMPONENTS_FILE);
 
+    // display welcome message
+    cout << "Welcome to the Computer Shop!\n";
+    //display how user should use the program
+    cout << "Please do not enter any spaces in your input.If you need to enter multiple words, use a dash(-) instead.\n";
+
 
 
     do {

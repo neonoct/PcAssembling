@@ -82,30 +82,11 @@ void readComponents(std::vector<Component*>& components, const std::string& file
 
             // Ignore the leading whitespace after the comma
             linestream >> std::ws;
-
-            //std::getline(linestream, manufacturer, ',');
-            //manufacturer.erase(0, manufacturer.find_first_not_of("\"")); // Remove leading quote
-            //manufacturer.erase(manufacturer.find_last_not_of("\"") + 1); // Remove trailing quote
-
-            //std::getline(linestream, name, ',');
-            //name.erase(0, name.find_first_not_of("\"")); // Remove leading quote
-            //name.erase(name.find_last_not_of("\"") + 1); // Remove trailing quote
-
             linestream >> manufacturer >> std::ws >> name >> std::ws;
             linestream >> price >> std::ws >> stock >> std::ws >> type >> std::ws;
             linestream >> isLaptopStr >> std::ws >> speed >> std::ws >> cores >> std::ws >> socket >> std::ws;
 
-
-            // Read laptopInput as string and then convert to bool
-            //std::getline(linestream, isLaptopStr, ',');
-            //std::cout << isLaptopStr << std::endl;
-            isLaptop = (isLaptopStr == "true");
-
-            //linestream >> speed >> std::ws >> cores >> std::ws;
-
-            //std::getline(linestream, socket);
-            //socket.erase(0, socket.find_first_not_of(" \"")); // Remove leading space and quote
-            //socket.erase(socket.find_last_not_of("\"") + 1); // Remove trailing quote
+            isLaptop = (isLaptopStr == "true");//convert string to bool
 
             components.push_back(new CPU(manufacturer, name, price, stock, type, isLaptop, speed, cores, socket));
         }
@@ -163,9 +144,7 @@ void readComponents(std::vector<Component*>& components, const std::string& file
 			int price, stock, type, size, speed;
 			bool isLaptop;
 
-			// Ignore the leading whitespace after the comma
 			linestream >> std::ws;
-
 			linestream >> manufacturer >> std::ws >> name >> std::ws;
 			linestream >> price >> std::ws >> stock >> std::ws >> type >> std::ws;
 			linestream >> isLaptopStr >> std::ws >> size >> std::ws >> speed >> std::ws;
@@ -179,14 +158,12 @@ void readComponents(std::vector<Component*>& components, const std::string& file
 			int price, stock, type, power, certification;
 			bool isLaptop;
 
-			// Ignore the leading whitespace after the comma
 			linestream >> std::ws;
-
 			linestream >> manufacturer >> std::ws >> name >> std::ws;
 			linestream >> price >> std::ws >> stock >> std::ws >> type >> std::ws;
 			linestream >> isLaptopStr >> std::ws >> power >> std::ws >> certification >> std::ws;
 
-			isLaptop = (isLaptopStr == "true");
+			isLaptop = (isLaptopStr == "true");//convert string to bool
 
 			components.push_back(new PS(manufacturer, name, price, stock, type, isLaptop, power, certification));
 		}
@@ -197,7 +174,6 @@ void readComponents(std::vector<Component*>& components, const std::string& file
 
 			// Ignore the leading whitespace after the comma
 			linestream >> std::ws;
-
 			linestream >> manufacturer >> std::ws >> name >> std::ws;
 			linestream >> price >> std::ws >> stock >> std::ws >> type >> std::ws;
 			linestream >> isLaptopStr >> std::ws >> color >> std::ws >> MBsize >> std::ws >> Material >> std::ws;
@@ -444,9 +420,7 @@ void addCase(std::vector<Component*>& components) {
 }
 
 void updateComponent(std::vector<Component*>& components, int index) {
-    //!!!!!
-    //correct first case deleted when entering manufacturer problem
-    //!!!!!
+
     if (index < 0 || index >= components.size()) {
         std::cout << "Invalid index. No component updated." << std::endl;
         return;
@@ -462,7 +436,6 @@ void updateComponent(std::vector<Component*>& components, int index) {
     Memory* memory = dynamic_cast<Memory*>(comp);
     PS* ps = dynamic_cast<PS*>(comp);
     Case* _case = dynamic_cast<Case*>(comp);
-
 
 
     // Update attributes based on the type
@@ -609,6 +582,12 @@ void deleteComponent(std::vector<Component*>& components, int index) {
 }   
 
 void updateStock(Component* component, int newStock) {
+    // Ensure stock doesn't drop below zero
+    if (newStock < 0) {
+		std::cout << "Cannot decrease stock below 0. No changes made to component: " << component->getName() << std::endl;
+		return;
+	}
+
     component->setStock(newStock);
     std::cout << "Stock updated to " << newStock << " for component: " << component->getName() << std::endl;
 }
@@ -687,7 +666,7 @@ void showSpecificComponents(const std::vector<Component*>& components, Component
 	    }
 }
 
-//overload the function to show specific component according to the type
+//overload the previous function to show specific component according to the type
 void showSpecificComponents(const std::vector<Component*>& components, ComponentType type) {
         //cast the type to int
         int typeInt = static_cast<int>(type);

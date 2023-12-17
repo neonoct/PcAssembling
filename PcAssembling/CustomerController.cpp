@@ -103,7 +103,6 @@ void showCustomers(const vector<Customer*>& customers) {
     for (const auto& customer : customers) {
         if (customer != nullptr) {
             std::cout << "Customer " << index++ << ": "<< std::endl;
-			//draw a line
 			std::cout << "------------------------" << std::endl;
             std::cout << customer->getDetails() << std::endl;
         }

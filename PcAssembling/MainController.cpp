@@ -30,35 +30,32 @@ void ownerActions(ComputerShop* computerShop) {
         case 1:
             cout << "Create component category selected.\n----------------------------\n";
             // Placeholder for future function
-
+            cout << "this part is not implemented yet\n";
             break;
         case 2:
             cout << "Change component category selected.\n----------------------------\n";
             // Placeholder for future function
+            cout << "this part is not implemented yet\n";
             break;
-            // Add cases for each owner action
         case 3:
             cout << "Delete component category selected.\n----------------------------\n";
             // Placeholder for future function
+            cout << "this part is not implemented yet\n";
             break;
         case 4:
             cout << "Add client selected.\n----------------------------\n";
-            // Placeholder for future function
             addCustomer(computerShop->getCustomers());
             break;
         case 5:
             cout << "Update client selected.\n----------------------------\n";
-            // Placeholder for future function
             updateCustomer(computerShop->getCustomers());
             break;
         case 6:
             cout << "Delete client selected.\n----------------------------\n";
-            // Placeholder for future function
             deleteCustomer(computerShop->getCustomers());
             break;
         case 7:
             cout << "Delete component selected.\n----------------------------\n";
-            // Placeholder for future function
             showComponents(computerShop->getComponents());
             cout << "Enter the index of the component you want to delete: ";
             int delIndex;
@@ -70,13 +67,11 @@ void ownerActions(ComputerShop* computerShop) {
             break;
         case 8:
             cout << "Add component selected.\n----------------------------\n";
-            // Placeholder for future function
             //function to add component
             addComponent(computerShop->getComponents());
             break;
         case 9:
             cout << "Update component selected.\n----------------------------\n";
-            // Placeholder for future function
             showComponents(computerShop->getComponents());
             cout << "Enter the index of the component you want to update: ";
             int index;
@@ -88,7 +83,6 @@ void ownerActions(ComputerShop* computerShop) {
             break;
         case 10:
             cout << "Update stock selected.\n----------------------------\n";
-            // Placeholder for future function
             showComponents(computerShop->getComponents());
             cout << "Enter the index of the component whose stock level you want to update: ";
             int stockIndex;
@@ -141,9 +135,9 @@ void employeeActions(ComputerShop* computerShop, std::vector<Invoice*>& invoices
   
     do {
         cout << "Employee Menu:\n";
-        cout << "1. Add client\n"; //needs Search Client use-case
-        cout << "2. Update client\n"; //needs Search Client use-case
-        cout << "3. Build system\n";//needs Search Client use-case and Create Invovice use case
+        cout << "1. Add client\n"; 
+        cout << "2. Update client\n";
+        cout << "3. Build system\n";
         cout << "0. Return to main menu\n";
         cout << "Enter action: ";
         cin >> action;
@@ -151,12 +145,10 @@ void employeeActions(ComputerShop* computerShop, std::vector<Invoice*>& invoices
         switch (action) {
         case 1:
             cout << "Add client selected.\n--------------------------\n";
-            // Placeholder for future function
             addCustomer(computerShop->getCustomers());
             break;
         case 2:
             cout << "Update client selected.\n--------------------------\n";
-            // Placeholder for future function
             updateCustomer(computerShop->getCustomers());
             break;
         case 3:

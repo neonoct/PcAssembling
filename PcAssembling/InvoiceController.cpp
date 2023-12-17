@@ -1,7 +1,5 @@
 #include "InvoiceController.h"
 #include <set>
-//gotto work on this errors int to float,returning the address of local variable or temporary
-
 
 void showInvoice(Invoice* invoice) {
 	// Display the invoice details
@@ -55,10 +53,6 @@ Invoice* buildSystem(std::vector<Customer*>& customers, std::vector<Component*>&
 		std::cout << "not enough stock to build the system" << std::endl;
 		return nullptr;
 	}
-	//test working
-	//std::cout << "!!!!!!!!" << std::endl;
-	//std::cout << selectedComponents[0]->getDetails() << std::endl;
-	//std::cout << "workworkwork" << std::endl;
 
 	//create invoice
 	Invoice* invoice = createInvoice(customer, selectedComponents);
@@ -102,10 +96,6 @@ bool selectComponents(std::vector<Component*>& selectedComponents, std::vector<C
 	std::cout << "1. CPU:" << std::endl;
 	selectedComponents.push_back(chooseSpecificComponents(components, ComponentType::CPU, isLaptop));
 	if (selectedComponents[0] == nullptr) {return false;}
-	//test working
-	//std::cout << "!!!!!!!!" << std::endl;
-	//std::cout << selectedComponents[0]->getDetails() << std::endl;
-	//std::cout << "!!!!!!!!" << std::endl;
 	std::cout << "2. GPU:" << std::endl;
 	selectedComponents.push_back(chooseSpecificComponents(components, ComponentType::GPU, isLaptop));
 	if (selectedComponents[1] == nullptr) { return false; }
@@ -125,12 +115,6 @@ bool selectComponents(std::vector<Component*>& selectedComponents, std::vector<C
 	selectedComponents.push_back(chooseSpecificComponents(components, ComponentType::Case, isLaptop));
 	if (selectedComponents[6] == nullptr) { return false; }
 
-	//if there is a nullptr in the vector return false
-	//for (int i = 0; i < selectedComponents.size(); i++) {
-	//	if (selectedComponents[i] == nullptr) {
-	//		return false;
-	//	}
-	//}
 
 	//now drop the stock of the components from the components vector
 	for (int i = 0; i < selectedComponents.size(); i++) {
@@ -141,7 +125,7 @@ bool selectComponents(std::vector<Component*>& selectedComponents, std::vector<C
 	return true;
 }
 
-Component* chooseSpecificComponents(const std::vector<Component*>& components, ComponentType type, bool isLaptop) {//show function ile beraber calisabilir ?
+Component* chooseSpecificComponents(const std::vector<Component*>& components, ComponentType type, bool isLaptop) {
 	//cast the type to int
 	int typeInt = static_cast<int>(type);
 	int index = 0;
@@ -170,7 +154,7 @@ Component* chooseSpecificComponents(const std::vector<Component*>& components, C
 				std::cout << "Selected component: ";
 				std::cout << component->getDetails() << std::endl;
 				std::cout << "returned: " << std::endl;
-				//it stock of the component is 0 return nullptr
+				//if stock of the component is 0 return nullptr
 				if (component->getStock() == 0) {
 					std::cout << "stock is 0 returning nullptr" << std::endl;
 					return nullptr;
